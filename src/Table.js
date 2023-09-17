@@ -1,69 +1,100 @@
-import React from 'react';
-import { useGlobalContext } from './context';
+import React, { useContext, useEffect } from 'react';
+import { Card, Descriptions } from 'antd';
+import { AppContext } from './context';
 
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-
+// const formData = {
+//     address: "Devkar hospital, Karvenagar",
+//     birthDate: "2023-09-04T18:45:12.727Z",
+//     city: "Pune",
+//     emailAddress: "anirudha.patil.dew@gmail.com",
+//     engineeringDomain: "Civil",
+//     firstName: "anirudha",
+//     gender: "female",
+//     graduationStatus: "In Progress",
+//     lastName: "patil",
+//     mobile: 7350364300,
+//     state: "Gujarat",
+//   };
 
 function BasicTable() {
+    // const { registrationData } = useContext(AppContext);
+    const { firstName, lastName, birthDate, emailAddress, mobile, gender, graduationStatus, engineeringDomain, city, state, address   } = useContext(AppContext);
+    
 
-    const {
-        firstName,
-        lastName,
-        email,
-        dateOfBirth,
-        gender,
-        mobileNo,
-        address,
-        course,
-        city,
-        state,
-    } = useGlobalContext();
+    useEffect(() => {
+        // console.log('registrationData', registrationData);
+    }, [firstName]);
 
-    const studentData = [
-        { id: 1, field: 'First Name', value: firstName },
-        { id: 2, field: 'Last Name', value: lastName },
-        { id: 3, field: 'Email', value: email },
-        { id: 4, field: 'Date of Birth', value: dateOfBirth },
-        { id: 5, field: 'Gender', value: gender },
-        { id: 6, field: 'Mobile Number', value: mobileNo },
-        { id: 7, field: 'Address', value: address },
-        { id: 8, field: 'Course', value: course },
-        { id: 9, field: 'City', value: city },
-        { id: 10, field: 'State', value: state },
-    ]
+    const items = [
+        {
+            key: '1',
+            label: 'First Name',
+            children: firstName,
+        },
+        {
+            key: '2',
+            label: 'Last Name',
+            children: lastName,
+        },
+        {
+            key: '3',
+            label: 'Birth Date',
+            children: birthDate.slice(0, birthDate.indexOf('T')),
+        },
+        {
+            key: '4',
+            label: 'Email Address',
+            children: emailAddress,
+        },
+        {
+            key: '5',
+            label: 'Mobile',
+            children: mobile,
+        },
+        {
+            key: '6',
+            label: 'Gender',
+            children: gender,
+        },
+        {
+            key: '7',
+            label: 'Graduation Status',
+            children: graduationStatus,
+        },
+        {
+            key: '8',
+            label: 'Engineering Domain',
+            children: engineeringDomain,
+        },
+
+        {
+            key: '9',
+            label: 'Address',
+            children: address,
+        },
+        {
+            key: '10',
+            label: 'City',
+            children: city,
+        },
+        {
+            key: '11',
+            label: 'State',
+            children: state,
+        }
+    ];
 
     return (
-        <TableContainer className='card-container' component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
-            <TableHead>
-          <TableRow>
-            <TableCell >Field</TableCell>
-            <TableCell >Details</TableCell>
-          </TableRow>
-        </TableHead>
-                <TableBody>
-                        {studentData.map((row)=>{
-                            return (
-                                <TableRow key = {row.field}>
-                                    <TableCell>{row.field}</TableCell>
-                                    <TableCell>{row.value}</TableCell>
-                                </TableRow>
-                            )
-                        })}
-                    </TableBody>
-            </Table>
-        </TableContainer>
+        <div >
+            <Card style={{ margin: "auto", marginTop: "5vh", margin: "5%", boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)"}}>
+            <h1> Student Info</h1>
+            {/* <Descriptions title="Student Info" items={items} style={{ fontWeight: "bold" }} bordered/> */}
+            <Descriptions  items={items} style={{ fontWeight: "bold" }} bordered/>
+        </Card>
+        </div>
     )
-
-
-
 }
 
-
 export default BasicTable;
+
+
