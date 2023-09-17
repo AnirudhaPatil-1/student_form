@@ -23,7 +23,7 @@ function StudentForm() {
 
     return (
         <div  >
-            <Card  style={{maxWidth: 600, margin: "auto", marginTop: "5vh",backgroundColor: "#fbfbf9	" ,boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)" }} bordered={true}>
+            <Card  style={{maxWidth: 600, margin: "auto", marginTop: "5vh",backgroundColor: "#FCFBFC	" ,boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)" }} bordered={true}>
                 <h1>Student Registration Form</h1>
                 <Form
                     form={form}
