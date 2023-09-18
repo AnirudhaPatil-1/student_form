@@ -31,7 +31,7 @@ function StudentForm() {
                     onFinish={onFinish}
                 >
                     <Row gutter={16}>
-                        <Col md={12} sm={24}>
+                        <Col lg={12} md={24} sm={24} xs={24} >
                             <Form.Item
                                 name="firstName"
                                 label="First Name"
@@ -41,10 +41,10 @@ function StudentForm() {
                                     },
                                 ]}
                             >
-                                <Input maxLength={50} />
+                                <Input maxLength={50} style={{ width: '100%' }} />
                             </Form.Item>
                         </Col>
-                        <Col md={12} sm={24}>
+                        <Col lg={12} md={24} sm={24} xs={24}  >
                             <Form.Item
                                 name="lastName"
                                 label="Last Name"
@@ -54,13 +54,13 @@ function StudentForm() {
                                     },
                                 ]}
                             >
-                                <Input />
+                                <Input maxLength={50} style={{ width: '100%' }} />
                             </Form.Item>
                         </Col>
                     </Row>
 
                     <Row gutter={16} >
-                        <Col md={12} sm={24}>
+                        <Col lg={12} md={24} sm={24} xs={24}>
                             <Form.Item
                                 name="birthDate"
                                 label="Birth Date"
@@ -73,7 +73,7 @@ function StudentForm() {
                                 <DatePicker style={{ width: "100%" }} />
                             </Form.Item>
                         </Col>
-                        <Col md={12} sm={24} >
+                        <Col lg={12} md={24} sm={24} xs={24} >
                             <Form.Item
                                 name="emailAddress"
                                 label="Email Address"
@@ -84,7 +84,7 @@ function StudentForm() {
                                     },
                                 ]}
                             >
-                                <Input />
+                                <Input maxLength={100} style={{ width: '100%' }} />
                             </Form.Item>
 
                         </Col>
@@ -92,7 +92,7 @@ function StudentForm() {
                     </Row>
 
                     <Row gutter={16} >
-                        <Col md={12} sm={24}>
+                        <Col lg={12} md={24} sm={24} xs={24}>
                             <Form.Item
                                 name="mobile"
                                 label="Mobile"
@@ -105,7 +105,7 @@ function StudentForm() {
                                 <InputNumber maxLength={10} style={{ width: "100%" }} />
                             </Form.Item>
                         </Col>
-                        <Col md={12} sm={23}>
+                        <Col lg={12} md={24} sm={24} xs={24}>
                             <Form.Item
                                 name="gender"
                                 label="Gender"
@@ -118,6 +118,7 @@ function StudentForm() {
                                 <Select
                                     placeholder="Select a option"
                                     allowClear
+                                    style={{ width: '100%' }}
                                 >
                                     <Option value="male">Male</Option>
                                     <Option value="female">Female</Option>
@@ -130,7 +131,7 @@ function StudentForm() {
 
 
                     <Row gutter={16}>
-                        <Col md={12} sm={24}>
+                        <Col lg={12} md={24} sm={24} xs={24}>
                             <Form.Item
                                 name="graduationStatus"
                                 label="Graduation Status"
@@ -144,13 +145,14 @@ function StudentForm() {
                                 <Select
                                     placeholder="Select graduation status"
                                     allowClear
+                                    style={{ width: '100%' }}
                                 >
                                     <Option value="Completed">Completed</Option>
                                     <Option value="In Progress">In Progress</Option>
                                 </Select>
                             </Form.Item>
                         </Col>
-                        <Col md={12} sm={24}>
+                        <Col lg={12} md={24} sm={24} xs={24}>
                             <Form.Item
                                 name="engineeringDomain"
                                 label="Engineering Domain"
@@ -164,6 +166,7 @@ function StudentForm() {
                                 <Select
                                     placeholder="Select an engineering domain"
                                     allowClear
+                                    style={{ width: '100%' }}
                                 >
                                     <Option value="Mechanical">Mechanical Engineering</Option>
                                     <Option value="Civil">Civil Engineering</Option>
@@ -195,12 +198,12 @@ function StudentForm() {
                             },
                         ]}
                     >
-                        <Input.TextArea maxLength={200} />
+                        <Input.TextArea maxLength={300} style={{ width: '100%' }} />
                     </Form.Item>
 
 
                     <Row gutter={16}>
-                        <Col md={12} sm={24} >
+                        <Col lg={12} md={24} sm={24} xs={24} >
                             <Form.Item
                                 name="city"
                                 label="City"
@@ -210,10 +213,10 @@ function StudentForm() {
                                     },
                                 ]}
                             >
-                                <Input maxLength={50} />
+                                <Input maxLength={50} style={{ width: '100%' }} />
                             </Form.Item>
                         </Col>
-                        <Col md={12} sm={12}>
+                        <Col lg={12} md={24} sm={24} xs={24}>
                             <Form.Item
                                 name="state"
                                 label="State"
@@ -227,6 +230,7 @@ function StudentForm() {
                                 <Select
                                     placeholder="Select a state"
                                     allowClear
+                                    style={{ width: '100%' }}
                                 >
                                     <Option value="Andhra Pradesh">Andhra Pradesh</Option>
                                     <Option value="Arunachal Pradesh">Arunachal Pradesh</Option>
