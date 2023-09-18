@@ -1,10 +1,27 @@
 import React, { useState } from "react";
 import { createContext } from "react";
 
+const initialState = {
+  firstName: "",
+  lastName: "",
+  birthDate: null,
+  emailAddress: "",
+  mobile: null,
+  gender: "",
+  graduationStatus: "",
+  engineeringDomain: "",
+  address: "",
+  city: "",
+  state: "",
+};
+
+
+
 const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
-  const [registrationData, setRegistrationData] = useState({});
+  const [registrationData, setRegistrationData] = useState(initialState);
+  console.log(registrationData);
 
   return (
 
