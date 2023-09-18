@@ -2,6 +2,8 @@ import React, { useContext, useEffect } from 'react';
 import { Card, Descriptions } from 'antd';
 import { AppContext } from './context';
 
+import './App.css'
+
 // const formData = {
 //     address: "Devkar hospital, Karvenagar",
 //     birthDate: "2023-09-04T18:45:12.727Z",
@@ -39,7 +41,7 @@ function BasicTable() {
         {
             key: '3',
             label: 'Birth Date',
-            children: birthDate.slice(0, birthDate.indexOf('T')),
+            children: birthDate ? birthDate.slice(0, birthDate.indexOf('T')) : '',
         },
         {
             key: '4',
