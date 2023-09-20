@@ -95,10 +95,10 @@ const StudentTable = () => {
     }
 
     return (
-        <Card>
+        <Card className='student-table-container'>
             <Table bordered columns={columns} dataSource={data} />
 
-            <Button type="primary" htmlType="button" onClick={navigateToStudentForm}>
+            <Button className='table-btn' type="primary" htmlType="button" onClick={navigateToStudentForm}>
                 Back to Student Form
             </Button>
             </Card>
