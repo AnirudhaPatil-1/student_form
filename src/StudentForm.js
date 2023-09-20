@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AppContext } from "./context";
 import { Button, Card, Col, DatePicker, Form, Input, InputNumber, Row, Select, Space } from 'antd';
+import {ADD_STUDENT} from './reducer';
 
 import { useNavigate } from "react-router-dom";
 const { Option } = Select;
@@ -8,14 +9,18 @@ const { Option } = Select;
 function StudentForm() {
     const [form] = Form.useForm();
     // const { setRegistrationData } = useContext(AppContext);
-    const {registrationData, setRegistrationData} = useContext(AppContext);
+    // const {registrationData, setRegistrationData} = useContext(AppContext);
+    const {dispatch} = useContext(AppContext);
     const navigate = useNavigate();
 
     const onFinish = (values) => {
         values.birthDate = new Date(values.birthDate).toISOString();
         // setRegistrationData(values);
-        setRegistrationData([...registrationData, values]   )
-        console.log(values);
+        // setRegistrationData([...registrationData, values]   )
+
+        //dispatch function to add object containing  student data 
+        dispatch({type: ADD_STUDENT, payload: values});
+        // console.log(values);
         navigate('/table');
     };
 
