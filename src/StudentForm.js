@@ -7,13 +7,15 @@ const { Option } = Select;
 
 function StudentForm() {
     const [form] = Form.useForm();
-    const { setRegistrationData } = useContext(AppContext);
+    // const { setRegistrationData } = useContext(AppContext);
+    const {registrationData, setRegistrationData} = useContext(AppContext);
     const navigate = useNavigate();
 
     const onFinish = (values) => {
         values.birthDate = new Date(values.birthDate).toISOString();
-        // console.log(values);
-        setRegistrationData(values);
+        // setRegistrationData(values);
+        setRegistrationData([...registrationData, values]   )
+        console.log(values);
         navigate('/table');
     };
 
