@@ -1,14 +1,14 @@
-const reducer = (state, action) => {
+const ADD_STUDENT = 'ADD_STUDENT';
+
+const registrationDataReducer = (state, action) => {
     switch (action.type) {
-        case "CHANGE_FIRST_NAME":
-            return {
-            ...state,
-            firstName: action.payload,
-            }
+        case "ADD_STUDENT":
+            return [...state, action.payload]
+            
 
         default: 
             return {
-                ...state
+                state
             }
         
         
@@ -16,4 +16,4 @@ const reducer = (state, action) => {
 }
     
 
-export default reducer;
+export {ADD_STUDENT, registrationDataReducer};
