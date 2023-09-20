@@ -21,7 +21,7 @@ function StudentForm() {
         //dispatch function to add object containing  student data 
         dispatch({type: ADD_STUDENT, payload: values});
         // console.log(values);
-        navigate('/table');
+        navigate('/student-table');
     };
 
     const onReset = () => {
