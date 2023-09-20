@@ -88,7 +88,7 @@ function BasicTable() {
 
     return (
         <div >
-            <Card style={{ margin: "auto", marginTop: "5vh", margin: "5%", boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)"}}>
+            <Card style={{ margin: "auto", marginTop: "5vh", boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)"}}>
             <h1> Student Info</h1>
             {/* <Descriptions title="Student Info" items={items} style={{ fontWeight: "bold" }} bordered/> */}
             <Descriptions  items={items} style={{ fontWeight: "bold" }} bordered/>
