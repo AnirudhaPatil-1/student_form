@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+import  { useReducer } from "react";
 import { createContext } from "react";
+import { registrationDataReducer } from "./reducer";
 
+
+//SINGLE STUDENT REGISTRATION FORMAT:
 // const initialState = {
 //   firstName: "",
 //   lastName: "",
@@ -14,19 +18,30 @@ import { createContext } from "react";
 //   city: "",
 //   state: "",
 // };
+
+//MULTIPLE_ STUDENT REGISTRATION FORMAT
 const initialState = [];
 
 
 const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
-  const [registrationData, setRegistrationData] = useState(initialState);
-  console.log(registrationData);
+  
+  //USESTATE
+  // const [registrationData, setRegistrationData] = useState(initialState);
+  
+  //USEREDUCER
+  const [registrationData, dispatch] = useReducer(registrationDataReducer, initialState);
+  // console.log(registrationData);
 
   return (
 
     <AppContext.Provider
-      value={{ registrationData, setRegistrationData }}
+    //USING USESTATE +  CONTEXT
+      // value={{ registrationData, setRegistrationData }}
+
+      //USING REDUCER + CONTEXT
+      value={{ registrationData, dispatch }}
     >
       {children}
     </AppContext.Provider>
